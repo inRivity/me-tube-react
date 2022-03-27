@@ -47,7 +47,7 @@ function App() {
   return (
     <DndProvider backend={HTML5Backend}>
     <div className="App">
-      <div style={{position:'absolute',color:'#fff', backgroundColor:'#000', opacity: 0.3, padding: '16px'}}>
+      <div style={{position:'absolute',color:'#fff', backgroundColor:'#000', opacity: 0.3, padding: '16px', bottom:0}}>
         <p>for debug</p>
         <p>stage: {stage}</p>
         <p>displayAdvertisementNumber: {displayAdvertisementNumber}</p>
