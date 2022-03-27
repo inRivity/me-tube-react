@@ -25,9 +25,9 @@ function App() {
     setDisplayAdvertisementNumber(0);
     setStage(stage);
   }
-  const video = require('./video/video_for_dev.mp4')
+  const video = 'https://www.youtube.com/watch?v=uUvthLpSHrQ' // require('./video/video_for_dev.mp4')
   const onProgress = (state: {playedSeconds: number,played:number,loadedSeconds:number,loaded:number}) => {
-      console.log(state)
+      // console.log(state)
       setPlayedSeconds(state.playedSeconds)
       setPlayedRate(state.played)
       seLoadedSeconds(state.loadedSeconds)
