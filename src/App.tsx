@@ -64,7 +64,12 @@ function App() {
         <div className='bg-slate-400'>
           header
         </div>
-        <div className='mx-auto relative bg-slate-200' style={{height: 'calc(100vw*0.56)', width: '100vw',}}>
+        <div className='mx-auto relative bg-slate-200' style={{
+          height: 'calc(100vw*0.56)',
+          width: '100vw',
+          maxHeight: '60vh',
+          maxWidth: 'calc(60vh/0.56)'
+        }}>
           <div className='bg-white min-w-full min-h-full' style={{
             display: displayAdvertisementNumber!==0 ? 'block' : 'none',
           }}>
