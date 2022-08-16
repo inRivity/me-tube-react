@@ -7,10 +7,8 @@ import Main from './pages/Main';
 function App() {
   return (
     <BrowserRouter basename="/me-tube-react">
-      <h1>Hello Router</h1>
       <Routes>
-        <Route path="/main" element={<Main />} />
-        <Route path="/" element={<Attention />} />
+        <Route path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );

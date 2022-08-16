@@ -1,17 +1,15 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
-interface Props {
-  clearAdvertisement: () => void;
-}
+import { AdverticementProps } from './interface';
 
-export function Advertisement6(props: Props) {
-  const { clearAdvertisement } = props;
+export function Advertisement6(props: AdverticementProps) {
+  const { clearAdvertisement, isDisplay } = props;
 
   const onClick = () => {
     clearAdvertisement();
   };
   return (
-    <div>
+    <div style={{ display: isDisplay ? 'block' : 'none' }}>
       <button onClick={onClick}>なんかのゲームやってスキップ</button>
     </div>
   );

@@ -1,12 +1,10 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
-interface Props {
-  clearAdvertisement: () => void;
-}
+import { AdverticementProps } from './interface';
 
-export function Advertisement4(props: Props) {
-  const { clearAdvertisement } = props;
+export function Advertisement4(props: AdverticementProps) {
+  const { clearAdvertisement, isDisplay } = props;
 
   const [_, drag] = useDrag(() => ({
     type: 'skipButton',
@@ -33,7 +31,7 @@ export function Advertisement4(props: Props) {
     []
   );
   return (
-    <div>
+    <div style={{ display: isDisplay ? 'block' : 'none' }}>
       <div ref={drop}>ここにDrop</div>
       <div ref={drag}>スキップ↑</div>
     </div>

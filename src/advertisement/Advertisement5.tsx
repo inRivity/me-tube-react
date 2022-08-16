@@ -1,12 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 
-interface Props {
-  clearAdvertisement: () => void;
-}
+import { AdverticementProps } from './interface';
 
-export function Advertisement5(props: Props) {
-  const { clearAdvertisement } = props;
+export function Advertisement5(props: AdverticementProps) {
+  const { clearAdvertisement, isDisplay } = props;
 
   const [isDrop, setIsDrop] = useState(false);
   const [_, drag] = useDrag(() => ({
@@ -35,7 +33,7 @@ export function Advertisement5(props: Props) {
     []
   );
   return (
-    <div>
+    <div style={{ display: isDisplay ? 'block' : 'none' }}>
       <div ref={drag}>{isDrop ? '' : 'スキ'}</div>
       <div ref={drop}>{isDrop ? 'スキ' : ''}ップ</div>
     </div>

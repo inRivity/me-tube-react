@@ -1,12 +1,10 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 
-interface Props {
-  clearAdvertisement: () => void;
-}
+import { AdverticementProps } from './interface';
 
-export function Advertisement3(props: Props) {
+export function Advertisement3(props: AdverticementProps) {
   const [waitCount, setWaitCount] = useState(5);
-  const { clearAdvertisement } = props;
+  const { clearAdvertisement, isDisplay } = props;
 
   const onClick = () => {
     if (waitCount === 0) {
@@ -16,7 +14,7 @@ export function Advertisement3(props: Props) {
     }
   };
   return (
-    <div>
+    <div style={{ display: isDisplay ? 'block' : 'none' }}>
       <button onClick={onClick}>
         {waitCount === 0 ? 'スキップ' : `${waitCount}回後にスキップ`}
       </button>
