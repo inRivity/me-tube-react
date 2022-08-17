@@ -6,24 +6,28 @@ export function Attention(props: {
 }) {
   return (
     <div
+      className='flex flex-col items-center gap-4 p-4'
       style={{
         height: '100vh',
         width: '100vw',
         position: 'absolute',
         zIndex: 999,
         backgroundColor: 'white',
-        display: props.isDisplay ? 'block' : 'none'
+        display: props.isDisplay ? 'flex' : 'none' // ここのせいでflexじゃなくなっていたスマン
       }}
     >
-      <h1>MeTube</h1>
-      <h2>注意事項</h2>
-      <p>ソースコード見るな</p>
-      <p>次のページに進むと音が出るよ</p>
-      <p>ネタバレ禁止だよ</p>
-      <p>他色々</p>
-      <h2>以下のボタンを押してスタート</h2>
-      <button onClick={props.onGameStart(false)}>音がでるよすたあと</button>
-      <button onClick={props.onGameStart(true)}>音がでないよすたあと</button>
+      <div className='text-3xl m-4'>MeTube</div>
+
+      <div className='leading-10'>注意事項
+      <p>・ソースコードは見ないでください。</p>
+      <p>・次に進むと音がでるよ。鼓膜破らないように注意してくださいね。</p>
+      <p>・このゲームの目的はとある人達のお願いを叶えることです。</p>
+      <p>・ネタバレは禁止です</p></div>
+
+      <div className='m-1.5 items-center flex flex-col gap-2'><div>下のボタンを押してスタート！</div>
+
+      <div className='text-3xl'><button onClick={props.onGameStart(false)}>START</button></div>
+    </div>
     </div>
   );
 }
